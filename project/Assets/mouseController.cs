@@ -47,6 +47,7 @@ public class mouseController : MonoBehaviour {
 			rotationY = ClampAngle (rotationY, minimumY, maximumY);
 			Quaternion yQuaternion = Quaternion.AngleAxis (-rotationY, Vector3.right);
 			transform.localRotation = originalRotation * yQuaternion;
+			int x = 0;
 		}
 	}
 
