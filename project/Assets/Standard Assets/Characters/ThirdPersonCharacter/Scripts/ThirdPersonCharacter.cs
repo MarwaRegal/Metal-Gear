@@ -27,6 +27,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		float m_CapsuleHeight;
 		Vector3 m_CapsuleCenter;
 		CapsuleCollider m_Capsule;
+		bool m_Crawling;
 		bool m_Crouching;
 
 
@@ -43,7 +44,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		}
 
 
-		public void Move(Vector3 move, bool crouch, bool jump)
+		public void Move(Vector3 move, bool crouch, bool crawl, bool jump)
 		{
 
 			// convert the world relative moveInput vector into a local-relative
@@ -69,6 +70,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			}
 
 			ScaleCapsuleForCrouching(crouch);
+			CheckCrawl (crawl);
 			PreventStandingInLowHeadroom();
 
 			// send input and other state parameters to the animator
@@ -100,6 +102,20 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			}
 		}
 
+		void CheckCrawl(bool crawl){
+
+			if (m_IsGrounded && crawl) {
+
+				if (m_Crawling)
+					return;
+				else
+					m_Crawling = true;
+			} else {
+
+				m_Crawling = false;
+			}
+		}
+
 		void PreventStandingInLowHeadroom()
 		{
 			// prevent standing up in crouch-only zones
@@ -120,6 +136,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			// update the animator parameters
 			m_Animator.SetFloat("Forward", m_ForwardAmount, 0.1f, Time.deltaTime);
 			m_Animator.SetFloat("Turn", m_TurnAmount, 0.1f, Time.deltaTime);
+			m_Animator.SetBool("Crawl", m_Crawling);
 			m_Animator.SetBool("Crouch", m_Crouching);
 			m_Animator.SetBool("OnGround", m_IsGrounded);
 			if (!m_IsGrounded)
