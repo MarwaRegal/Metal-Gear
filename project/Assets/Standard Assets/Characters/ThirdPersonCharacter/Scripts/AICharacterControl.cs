@@ -38,8 +38,9 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 agent.SetDestination(target.position);
 
             if (agent.remainingDistance > agent.stoppingDistance)
-				character.Move(agent.desiredVelocity, false, false, false);
+				character.Move(agent.desiredVelocity, false, false, false, false);
             else
+<<<<<<< HEAD
 				character.Move(Vector3.zero, false, false, false);
 =======
         // Update is called once per frame
@@ -61,6 +62,9 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             }
 
 >>>>>>> Stashed changes
+=======
+				character.Move(Vector3.zero, false, false, false, false);
+>>>>>>> origin/master
         }
 
 

@@ -32,6 +32,9 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 =======
 >>>>>>> Stashed changes
 		bool m_Crouching;
+		bool m_Attacking;
+		bool m_Con_Attacking;
+		bool m_die;
 
 
 		void Start()
@@ -47,12 +50,19 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		}
 
 
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 		public void Move(Vector3 move, bool crouch, bool crawl, bool jump)
 =======
 		public void Move(Vector3 move, bool crouch, bool jump)
 >>>>>>> Stashed changes
+=======
+		public void Move(Vector3 move, bool crouch, bool crawl, bool attack , bool jump)
+>>>>>>> origin/master
 		{
+
+			//if (m_die)
+			//	return;
 
 			// convert the world relative moveInput vector into a local-relative
 			// turn amount and forward amount required to head in the desired
@@ -64,7 +74,9 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			m_TurnAmount = Mathf.Atan2(move.x, move.z);
 			m_ForwardAmount = move.z;
 
-			ApplyExtraTurnRotation();
+			if (!m_die) {
+				ApplyExtraTurnRotation ();
+			}
 
 			// control and velocity handling is different when grounded and airborne:
 			if (m_IsGrounded)
@@ -77,10 +89,14 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			}
 
 			ScaleCapsuleForCrouching(crouch);
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 			CheckCrawl (crawl);
 =======
 >>>>>>> Stashed changes
+=======
+			CheckGroundMoves (crawl, attack);
+>>>>>>> origin/master
 			PreventStandingInLowHeadroom();
 
 			// send input and other state parameters to the animator
@@ -116,19 +132,40 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			}
 		}
 
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 		void CheckCrawl(bool crawl){
+=======
+		void CheckGroundMoves(bool crawl, bool attack){
+>>>>>>> origin/master
 
-			if (m_IsGrounded && crawl) {
+			if (m_IsGrounded) {
 
-				if (m_Crawling)
-					return;
-				else
-					m_Crawling = true;
-			} else {
+				if (crawl) {
 
-				m_Crawling = false;
-			}
+					if (m_Crawling)
+						return;
+					else
+						m_Crawling = true;
+				} else if (attack) {
+					
+					if (m_Attacking) {
+						m_Con_Attacking = true;
+					} else {
+						m_Attacking = true;
+					}
+				}
+
+				else {
+					if (m_Con_Attacking) {
+						m_Con_Attacking = false;
+					} else {
+						m_Attacking = false;
+					}
+					m_Crawling = false;
+
+					}
+				}
 		}
 
 =======
@@ -162,7 +199,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 =======
 >>>>>>> Stashed changes
 			m_Animator.SetBool("Crouch", m_Crouching);
+			m_Animator.SetBool("Attack", m_Attacking);
+			m_Animator.SetBool("ContinueAttacking", m_Con_Attacking);
 			m_Animator.SetBool("OnGround", m_IsGrounded);
+			m_Animator.SetBool("Die", m_die);
 			if (!m_IsGrounded)
 			{
 				m_Animator.SetFloat("Jump", m_Rigidbody.velocity.y);
@@ -261,6 +301,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 				m_GroundNormal = Vector3.up;
 				m_Animator.applyRootMotion = false;
 			}
+		}
+
+		public void setDead(){
+			m_die = true;
 		}
 	}
 }
