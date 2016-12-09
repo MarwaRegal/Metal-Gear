@@ -102,7 +102,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
             // get a normal for the surface that is being touched to move along it
             RaycastHit hitInfo;
             Physics.SphereCast(transform.position, m_CharacterController.radius, Vector3.down, out hitInfo,
+<<<<<<< Updated upstream
                                m_CharacterController.height/2f, Physics.AllLayers, QueryTriggerInteraction.Ignore);
+=======
+                               m_CharacterController.height/2f);
+>>>>>>> Stashed changes
             desiredMove = Vector3.ProjectOnPlane(desiredMove, hitInfo.normal).normalized;
 
             m_MoveDir.x = desiredMove.x*speed;
@@ -129,8 +133,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             ProgressStepCycle(speed);
             UpdateCameraPosition(speed);
+<<<<<<< Updated upstream
 
             m_MouseLook.UpdateCursorLock();
+=======
+>>>>>>> Stashed changes
         }
 
 

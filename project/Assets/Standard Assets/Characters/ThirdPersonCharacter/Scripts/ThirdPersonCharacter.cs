@@ -27,7 +27,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		float m_CapsuleHeight;
 		Vector3 m_CapsuleCenter;
 		CapsuleCollider m_Capsule;
+<<<<<<< Updated upstream
 		bool m_Crawling;
+=======
+>>>>>>> Stashed changes
 		bool m_Crouching;
 
 
@@ -44,7 +47,11 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		}
 
 
+<<<<<<< Updated upstream
 		public void Move(Vector3 move, bool crouch, bool crawl, bool jump)
+=======
+		public void Move(Vector3 move, bool crouch, bool jump)
+>>>>>>> Stashed changes
 		{
 
 			// convert the world relative moveInput vector into a local-relative
@@ -70,7 +77,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			}
 
 			ScaleCapsuleForCrouching(crouch);
+<<<<<<< Updated upstream
 			CheckCrawl (crawl);
+=======
+>>>>>>> Stashed changes
 			PreventStandingInLowHeadroom();
 
 			// send input and other state parameters to the animator
@@ -91,7 +101,11 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			{
 				Ray crouchRay = new Ray(m_Rigidbody.position + Vector3.up * m_Capsule.radius * k_Half, Vector3.up);
 				float crouchRayLength = m_CapsuleHeight - m_Capsule.radius * k_Half;
+<<<<<<< Updated upstream
 				if (Physics.SphereCast(crouchRay, m_Capsule.radius * k_Half, crouchRayLength, Physics.AllLayers, QueryTriggerInteraction.Ignore))
+=======
+				if (Physics.SphereCast(crouchRay, m_Capsule.radius * k_Half, crouchRayLength))
+>>>>>>> Stashed changes
 				{
 					m_Crouching = true;
 					return;
@@ -102,6 +116,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			}
 		}
 
+<<<<<<< Updated upstream
 		void CheckCrawl(bool crawl){
 
 			if (m_IsGrounded && crawl) {
@@ -116,6 +131,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			}
 		}
 
+=======
+>>>>>>> Stashed changes
 		void PreventStandingInLowHeadroom()
 		{
 			// prevent standing up in crouch-only zones
@@ -123,7 +140,11 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			{
 				Ray crouchRay = new Ray(m_Rigidbody.position + Vector3.up * m_Capsule.radius * k_Half, Vector3.up);
 				float crouchRayLength = m_CapsuleHeight - m_Capsule.radius * k_Half;
+<<<<<<< Updated upstream
 				if (Physics.SphereCast(crouchRay, m_Capsule.radius * k_Half, crouchRayLength, Physics.AllLayers, QueryTriggerInteraction.Ignore))
+=======
+				if (Physics.SphereCast(crouchRay, m_Capsule.radius * k_Half, crouchRayLength))
+>>>>>>> Stashed changes
 				{
 					m_Crouching = true;
 				}
@@ -136,7 +157,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			// update the animator parameters
 			m_Animator.SetFloat("Forward", m_ForwardAmount, 0.1f, Time.deltaTime);
 			m_Animator.SetFloat("Turn", m_TurnAmount, 0.1f, Time.deltaTime);
+<<<<<<< Updated upstream
 			m_Animator.SetBool("Crawl", m_Crawling);
+=======
+>>>>>>> Stashed changes
 			m_Animator.SetBool("Crouch", m_Crouching);
 			m_Animator.SetBool("OnGround", m_IsGrounded);
 			if (!m_IsGrounded)

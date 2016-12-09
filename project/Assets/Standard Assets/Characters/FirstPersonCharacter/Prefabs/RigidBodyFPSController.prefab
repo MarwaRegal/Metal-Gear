@@ -11,7 +11,10 @@ GameObject:
   - 20: {fileID: 2000000}
   - 81: {fileID: 8100000}
   - 114: {fileID: 11400006}
+<<<<<<< Updated upstream
   - 124: {fileID: 12410568}
+=======
+>>>>>>> Stashed changes
   m_Layer: 0
   m_Name: MainCamera
   m_TagString: MainCamera
@@ -44,7 +47,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100004}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< Updated upstream
   m_LocalPosition: {x: 0, y: 0.6, z: 0}
+=======
+  m_LocalPosition: {x: 0, y: .600000024, z: 0}
+>>>>>>> Stashed changes
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400002}
@@ -55,8 +62,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100006}
+<<<<<<< Updated upstream
   m_LocalRotation: {x: 0, y: 1, z: 0, w: -0.00000016292068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
+=======
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: -1.62920685e-07}
+  m_LocalPosition: {x: -30, y: 1, z: 25}
+>>>>>>> Stashed changes
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400000}
@@ -71,14 +83,22 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
+<<<<<<< Updated upstream
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0.019607844}
+=======
+  m_BackGroundColor: {r: .192156866, g: .301960796, b: .474509805, a: .0196078438}
+>>>>>>> Stashed changes
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
     y: 0
     width: 1
     height: 1
+<<<<<<< Updated upstream
   near clip plane: 0.3
+=======
+  near clip plane: .300000012
+>>>>>>> Stashed changes
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -90,12 +110,19 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
+<<<<<<< Updated upstream
   m_TargetEye: 3
   m_HDR: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
   m_StereoMirrorMode: 0
+=======
+  m_HDR: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: .0219999999
+>>>>>>> Stashed changes
 --- !u!54 &5400000
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -105,7 +132,11 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 10
   m_Drag: 0
+<<<<<<< Updated upstream
   m_AngularDrag: 0.05
+=======
+  m_AngularDrag: .0500000007
+>>>>>>> Stashed changes
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -157,7 +188,10 @@ MonoBehaviour:
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
+<<<<<<< Updated upstream
       m_RotationOrder: 4
+=======
+>>>>>>> Stashed changes
     CurrentTargetSpeed: 8
   mouseLook:
     XSensitivity: 2
@@ -167,6 +201,7 @@ MonoBehaviour:
     MaximumX: 90
     smooth: 1
     smoothTime: 18
+<<<<<<< Updated upstream
     lockCursor: 1
   advancedSettings:
     groundCheckDistance: 0.1
@@ -174,6 +209,13 @@ MonoBehaviour:
     slowDownRate: 20
     airControl: 0
     shellOffset: 0
+=======
+  advancedSettings:
+    groundCheckDistance: .100000001
+    stickToGroundHelperDistance: .600000024
+    slowDownRate: 20
+    airControl: 0
+>>>>>>> Stashed changes
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -187,8 +229,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Camera: {fileID: 2000000}
   motionBob:
+<<<<<<< Updated upstream
     HorizontalBobRange: 0.1
     VerticalBobRange: 0.05
+=======
+    HorizontalBobRange: .100000001
+    VerticalBobRange: .0500000007
+>>>>>>> Stashed changes
     Bobcurve:
       serializedVersion: 2
       m_Curve:
@@ -197,7 +244,11 @@ MonoBehaviour:
         inSlope: 0
         outSlope: 0
         tangentMode: 0
+<<<<<<< Updated upstream
       - time: 0.5
+=======
+      - time: .5
+>>>>>>> Stashed changes
         value: 1
         inSlope: 0
         outSlope: 0
@@ -219,6 +270,7 @@ MonoBehaviour:
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
+<<<<<<< Updated upstream
       m_RotationOrder: 4
     VerticaltoHorizontalRatio: 2
   jumpAndLandingBob:
@@ -234,6 +286,15 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100004}
   m_Enabled: 1
+=======
+    VerticaltoHorizontalRatio: 2
+  jumpAndLandingBob:
+    BobDuration: .150000006
+    BobAmount: .200000003
+  rigidbodyFirstPersonController: {fileID: 11400004}
+  StrideInterval: 4
+  RunningStrideLengthen: .722000003
+>>>>>>> Stashed changes
 --- !u!136 &13600000
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -243,8 +304,13 @@ CapsuleCollider:
   m_Material: {fileID: 13400000, guid: c2815a7ab32e42c4bb42f59caacb8ec1, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
+<<<<<<< Updated upstream
   m_Radius: 0.5
   m_Height: 1.6
+=======
+  m_Radius: .5
+  m_Height: 1.60000002
+>>>>>>> Stashed changes
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &100100000

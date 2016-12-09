@@ -14,12 +14,19 @@ namespace UnityStandardAssets.Characters.FirstPerson
         public float MaximumX = 90F;
         public bool smooth;
         public float smoothTime = 5f;
+<<<<<<< Updated upstream
         public bool lockCursor = true;
+=======
+>>>>>>> Stashed changes
 
 
         private Quaternion m_CharacterTargetRot;
         private Quaternion m_CameraTargetRot;
+<<<<<<< Updated upstream
         private bool m_cursorIsLocked = true;
+=======
+
+>>>>>>> Stashed changes
 
         public void Init(Transform character, Transform camera)
         {
@@ -51,6 +58,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 character.localRotation = m_CharacterTargetRot;
                 camera.localRotation = m_CameraTargetRot;
             }
+<<<<<<< Updated upstream
 
             UpdateCursorLock();
         }
@@ -94,6 +102,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 Cursor.visible = true;
             }
         }
+=======
+        }
+
+>>>>>>> Stashed changes
 
         Quaternion ClampRotationAroundXAxis(Quaternion q)
         {

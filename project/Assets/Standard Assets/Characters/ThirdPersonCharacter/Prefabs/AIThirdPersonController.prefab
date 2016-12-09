@@ -2599,7 +2599,11 @@ NavMeshAgent:
   m_Acceleration: 10
   avoidancePriority: 50
   m_AngularSpeed: 120
+<<<<<<< Updated upstream
   m_StoppingDistance: .200000003
+=======
+  m_StoppingDistance: 1.20000005
+>>>>>>> Stashed changes
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1

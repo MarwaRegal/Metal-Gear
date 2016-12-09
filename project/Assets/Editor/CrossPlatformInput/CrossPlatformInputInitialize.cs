@@ -32,9 +32,17 @@ namespace UnityStandardAssets.CrossPlatformInput.Inspector
             {
                 case BuildTarget.Android:
                 case BuildTarget.iOS:
+<<<<<<< Updated upstream
                 case BuildTarget.PSM: 
                 case BuildTarget.Tizen: 
                 case BuildTarget.WSAPlayer: 
+=======
+                case BuildTarget.WP8Player:
+                case BuildTarget.BlackBerry:
+				case BuildTarget.PSM: 
+				case BuildTarget.Tizen: 
+				case BuildTarget.WSAPlayer: 
+>>>>>>> Stashed changes
                     EditorUtility.DisplayDialog("Mobile Input",
                                                 "You have enabled Mobile Input. You'll need to use the Unity Remote app on a connected device to control your game in the Editor.",
                                                 "OK");
@@ -65,6 +73,11 @@ namespace UnityStandardAssets.CrossPlatformInput.Inspector
             {
                 case BuildTarget.Android:
                 case BuildTarget.iOS:
+<<<<<<< Updated upstream
+=======
+                case BuildTarget.WP8Player:
+                case BuildTarget.BlackBerry:
+>>>>>>> Stashed changes
                     EditorUtility.DisplayDialog("Mobile Input",
                                                 "You have disabled Mobile Input. Mobile control rigs won't be visible, and the Cross Platform Input functions will always return standalone controls.",
                                                 "OK");
@@ -84,19 +97,35 @@ namespace UnityStandardAssets.CrossPlatformInput.Inspector
         private static BuildTargetGroup[] buildTargetGroups = new BuildTargetGroup[]
             {
                 BuildTargetGroup.Standalone,
+<<<<<<< Updated upstream
                 BuildTargetGroup.Android,
                 BuildTargetGroup.iOS,
                 BuildTargetGroup.WSA
+=======
+                BuildTargetGroup.WebPlayer,
+                BuildTargetGroup.Android,
+                BuildTargetGroup.iOS,
+                BuildTargetGroup.WP8,
+                BuildTargetGroup.BlackBerry
+>>>>>>> Stashed changes
             };
 
         private static BuildTargetGroup[] mobileBuildTargetGroups = new BuildTargetGroup[]
             {
                 BuildTargetGroup.Android,
                 BuildTargetGroup.iOS,
+<<<<<<< Updated upstream
                 BuildTargetGroup.PSM, 
                 BuildTargetGroup.SamsungTV,
                 BuildTargetGroup.Tizen,
                 BuildTargetGroup.WSA 
+=======
+                BuildTargetGroup.WP8,
+                BuildTargetGroup.BlackBerry,
+				BuildTargetGroup.PSM, 
+				BuildTargetGroup.Tizen, 
+				BuildTargetGroup.WSA 
+>>>>>>> Stashed changes
             };
 
 
