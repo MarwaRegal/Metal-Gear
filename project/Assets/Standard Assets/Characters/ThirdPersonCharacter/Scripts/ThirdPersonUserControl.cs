@@ -49,7 +49,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             float h = CrossPlatformInputManager.GetAxis("Horizontal");
             float v = CrossPlatformInputManager.GetAxis("Vertical");
             bool crouch = Input.GetKey(KeyCode.C);
-			bool crawl = Input.GetKey (KeyCode.R);
+			bool crawl = Input.GetKey (KeyCode.LeftShift) || Input.GetKey (KeyCode.RightShift);
+			bool attack = Input.GetMouseButtonDown (0);
+			//bool attack = Input.GetKey(KeyCode.T);
+			bool die = Input.GetKey (KeyCode.K);
 
             // calculate move direction to pass to character
             if (m_Cam != null)
@@ -69,7 +72,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 #endif
 
             // pass all parameters to the character control script
-			m_Character.Move(m_Move, crouch, crawl, m_Jump);
+			if (die) {
+				m_Character.setDead ();
+			}
+			m_Character.Move(m_Move, crouch, crawl, attack ,m_Jump);
             m_Jump = false;
         }
     }
